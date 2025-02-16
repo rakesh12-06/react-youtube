@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # 🚀 Update main project dependencies (weekly)
+  - package-ecosystem: "yarn"  # Change to "yarn" if you use Yarn
+    directory: "/"  # Location of package.json
+    schedule:
+      interval: "weekly"  # Update dependencies weekly
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "react"
+        versions: [">=19.0.0"]  # Ignore React 19 major updates
+      - dependency-name: "react-dom"
+        versions: [">=19.0.0"]
+
+  # 🛠️ Update devDependencies (daily)
+  - package-ecosystem: "npm"
+    directory: "/"  
+    schedule:
+      interval: "daily"  # Check for devDependencies updates daily
+    open-pull-requests-limit: 3
+    allow:
+      - dependency-type: "development"  # Update only devDependencies
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=6.0.0"]  # Ignore TypeScript major updates
+
+  # ⚡ GitHub Actions updates (Optional)
+  - package-ecosystem: "github-actions"
+    directory: "/"  # Root directory of .github/workflows/
+    schedule:
+      interval: "daily"  # Keep CI/CD workflows updated weekly
