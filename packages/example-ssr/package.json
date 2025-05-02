@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "12.3.0",
+    "next": "14.2.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-youtube": "1.0.0"
